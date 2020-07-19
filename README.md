@@ -21,7 +21,7 @@ https://discuss.ardupilot.org/t/skid-steer-mower-overshooting-pivot-turns/28910/
 
 ATC_ACCEL_MAX 0.6 seems a good compromise to slow approaching turns without slowing to a crawl at intermediate WPs
 
-ATC_STR_RATE_FF 0.3-0.4 and ATC_STR_RATE_MAX at 40
+ATC_STR_RATE_FF 0.3-0.4, ATC_STR_RATE_MAX and WP_PIVOT_RATE 40
 
 ATC_STR_RATE_I 0.9 seems to allow faster update of yaw and fixes some of the s-turn issues
 
