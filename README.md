@@ -12,3 +12,32 @@ A collection of files that may be of use to ArduPilot Rover users.
 
 * ArduPilot parameter dumps that may be of interest
 * Filenames describe the intent
+
+
+### Notes
+
+Good reading:
+https://discuss.ardupilot.org/t/skid-steer-mower-overshooting-pivot-turns/28910/104
+
+ATC_ACCEL_MAX 0.6 seems a good compromise to slow approaching turns without slowing to a crawl at intermediate WPs
+
+ATC_STR_RATE_FF 0.3-0.4 and ATC_STR_RATE_MAX at 40
+
+ATC_STR_RATE_I 0.9 seems to allow faster update of yaw and fixes some of the s-turn issues
+
+ATC_STR_ANG_P of 1.0 - 1.5 seems appropriate - any more than that overshoots (leaning toward 1.0 may be better?)
+
+WP_RADIUS and WP_OVERSHOOT have big effects (0.5 each for now - maybe try .3 for WP_RADIUS again?)
+
+WP_SPEED 0 does not use CRUISE_SPEED - it literally stands still in auto mode
+
+NAVL1 parameters now at defaults (I think) - changing them from defaults results in overshoots or slow updates
+
+Disabling GPS_AUTO_CFG confuses EKF3 (never sees GPS config data) - boots faster but seems to hang waiting for complete initialization
+
+GPS_RATE_MS 100.  Seems to make GPS2 quirky, but any other value makes it worse
+(Unhealthy GPS Signal warnings still exist, but less frequent with this setting - 50 is too fast and results in rapidly cycling GPS2 solutions, most of which are not RTK corrected)
+
+Using GPS_DRV_OPTIONS 0 is too slow for GPS heading - need to use direct inject with crossover TX/RX from one SimpleRTK board to the other
+
+FENCE and OA seem broken - really bad behavior so far with GPS yaw and this tune
