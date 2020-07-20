@@ -19,7 +19,7 @@ A collection of files that may be of use to ArduPilot Rover users.
 Next to-do:
 https://github.com/ArduPilot/ardupilot/issues/8788
 
-Per that link, reduce ATC_STR_ACC_MAX to 37-40 to more closely match pivot turn rate.  180 is too fast.
+Per that link, mess with ATC_STR_ACC_MAX (default 180), but be careful not to set too low.
 
 Good reading:
 https://discuss.ardupilot.org/t/skid-steer-mower-overshooting-pivot-turns/28910/104
