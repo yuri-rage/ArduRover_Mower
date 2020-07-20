@@ -21,7 +21,7 @@ https://discuss.ardupilot.org/t/skid-steer-mower-overshooting-pivot-turns/28910/
 
 Normal steering and throttle nicely tuned - PID follows well
 
-Pivot turns tuning is close - occasionally under/overshoots slightly and pauses to correct before continuing on path - suspect ATC_STR_ANG_P needs attention
+Pivot turn tuning is close - occasionally under/overshoots slightly and pauses to correct before continuing on path - suspect ATC_STR_ANG_P needs attention
 
 ATC_ACCEL_MAX 0.6-0.7 seems to help smooth starts and possibly helps pivot turns
 
