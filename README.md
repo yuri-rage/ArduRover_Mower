@@ -19,15 +19,21 @@ A collection of files that may be of use to ArduPilot Rover users.
 Good reading:
 https://discuss.ardupilot.org/t/skid-steer-mower-overshooting-pivot-turns/28910/104
 
-ATC_ACCEL_MAX 0.6 seems a good compromise to slow approaching turns without slowing to a crawl at intermediate WPs
+Normal steering and throttle nicely tuned - PID follows well
 
-ATC_STR_RATE_FF 0.3-0.4, ATC_STR_RATE_MAX and WP_PIVOT_RATE 40
+Pivot turns tuning is close - occasionally under/overshoots slightly and pauses to correct before continuing on path - suspect ATC_STR_ANG_P needs attention
+
+ATC_ACCEL_MAX 0.6-0.7 seems to help smooth starts and possibly helps pivot turns
+
+ATC_DECEL_MAX 1.6 plus ATC_BRAKE 1 is the best discovery yet! Enables significant decel approaching sharp turns and limits overshoots
+
+ATC_STR_RATE_FF 0.3-0.4, ATC_STR_RATE_MAX and WP_PIVOT_RATE 37
 
 ATC_STR_RATE_I 0.9 seems to allow faster update of yaw and fixes some of the s-turn issues
 
-ATC_STR_ANG_P of 1.0 - 1.5 seems appropriate - any more than that overshoots (leaning toward 1.0 may be better?)
+ATC_STR_ANG_P of 1.0 - 1.7 seems appropriate - any more than that overshoots (1.7 set for now)
 
-WP_RADIUS and WP_OVERSHOOT have big effects (0.5 each for now - maybe try .3 for WP_RADIUS again?)
+WP_RADIUS and WP_OVERSHOOT have big effects (0.4 each for now)
 
 WP_SPEED 0 does not use CRUISE_SPEED - it literally stands still in auto mode
 
