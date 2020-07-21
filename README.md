@@ -14,6 +14,11 @@ A collection of files that may be of use to ArduPilot Rover users.
 * Filenames describe the intent
 
 
+### test.py
+
+Simple script to change RC channel 8 from Save Waypoint to Relay 3 control with a single mouse click.  Not pretty.  Functional.
+
+
 ### Notes
 
 Next to-do:
