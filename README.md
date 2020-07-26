@@ -18,6 +18,10 @@ A collection of files that may be of use to ArduPilot Rover users.
 
 Simple script to change RC channel 8 from Save Waypoint to Relay 3 control with a single mouse click.  Not pretty.  Functional.
 
+### solarElevUTC.lua
+
+Calculates solar elevation at current system time for a given latitude/longitude.  Intent is to use GPS coordinates to derive sun angle and use the information to turn lights on/off approaching dusk/dawn.
+
 
 ### Notes
 
