@@ -14,11 +14,11 @@ function GetGPSDate()
 	gpsWeek = gps:time_week(0)
 	gpsTime = tonumber(tostring(gps:time_week_ms(0))) -- tonumber/tostring coerces number from userdata type
 	
-	-- GPS epoch occured on 6 Jan 1980
+	-- GPS epoch occurred on 6 Jan 1980
 	year = 1980
 	dayNumber = gpsWeek * 7 + 6
 	
-    while (dayNumber > 365) do
+	while (dayNumber > 365) do
 		if IsLeapYear(year) then
 			dayNumber = dayNumber - 366
 			year = year + 1
