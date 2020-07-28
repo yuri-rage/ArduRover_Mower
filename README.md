@@ -18,13 +18,13 @@ A collection of files that may be of use to ArduPilot Rover users.
 
 Simple script to change RC channel 8 from Save Waypoint to Relay 3 control with a single mouse click.  Not pretty.  Functional.
 
+### duskLights.lua
+
+Builds upon solarElevUTC.lua, which should run on any OS-based interpreter.  duskLights.lua is modified to work with Ardupilot's scripting architecture, accounting for its lack of exposed libraries (os.date and os.time are not available).  Uses an iterative approach to calculate date/time from GPS week number and GPS time of week (in milliseconds).  Turns a relay (lights) on when the sun dips below a definable elevation.  Tested on Cube Orange and Mission Planner with success.
+
 ### solarElevUTC.lua
 
-Calculates solar elevation at current system time for a given latitude/longitude.  Intent is to use GPS coordinates to derive sun angle and use the information to turn lights on/off approaching dusk/dawn.
-
-### solarTest.lua
-
-Builds upon solarElevUTC.lua, which should run on any OS-based interpreter.  solarTest.lua is modified to work with Ardupilot's scripting architecture, accounting for its lack of exposed libraries.  Uses an iterative approach to calculate date/time from GPS week number and GPS time of week (in milliseconds).  Tested using REPL and SITL in Mission Planner with success.
+Calculates solar elevation at current system time for a given latitude/longitude.  Intent is to use GPS coordinates to derive sun angle and use the information to turn lights on/off approaching dusk/dawn.  Runs on an OS interpreter - not optimized for ArduPilot.
 
 ### Notes
 
