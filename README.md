@@ -22,6 +22,9 @@ Simple script to change RC channel 8 from Save Waypoint to Relay 3 control with 
 
 Calculates solar elevation at current system time for a given latitude/longitude.  Intent is to use GPS coordinates to derive sun angle and use the information to turn lights on/off approaching dusk/dawn.
 
+### solarTest.lua
+
+Builds upon solarElevUTC.lua, which should run on any OS-based interpreter.  solarTest.lua is modified to work with Ardupilot's scripting architecture, accounting for its lack of exposed libraries.  Uses an iterative approach to calculate date/time from GPS week number and GPS time of week (in milliseconds).  Tested using REPL and SITL in Mission Planner with success.
 
 ### Notes
 
