@@ -2,7 +2,7 @@
 ------- armSwitch ArduPilot Lua script ---------
 --                                            --
 -- Arms and disarms the flight controller     --
--- based on RC channel( switch) changes.      --
+-- based on RC channel (switch) changes.      --
 -- Useful to "overload" a channel for two     --
 -- functions, (i.e., ignition and arming).    --
 --                                            --
