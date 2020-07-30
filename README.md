@@ -18,6 +18,13 @@ A collection of files that may be of use to ArduPilot Rover users.
 
 Simple script to change RC channel 8 from Save Waypoint to Relay 3 control with a single mouse click.  Not pretty.  Functional.
 
+### armSwitch.lua
+
+Monitors an RC channel for a threshold PWM value and arms/disarms the flight controller accordingly.  Useful when RC channels are limited to "overload" a channel with an additional arm/disarm function.  I used it on a three position switch for the following functions:
+* Position 1: Engine Kill/Disarm
+* Position 2: Engine Run/Disarm
+* Position 3: Engine Run/Arm
+
 ### duskLights.lua
 
 Builds upon solarElevUTC.lua, which should run on any OS-based interpreter.  duskLights.lua is modified to work with Ardupilot's scripting architecture, accounting for its lack of exposed libraries (os.date and os.time are not available).  Uses an iterative approach to calculate date/time from GPS week number and GPS time of week (in milliseconds).  Turns a relay (lights) on when the sun dips below a definable elevation.  Tested on Cube Orange and Mission Planner with success.
