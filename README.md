@@ -20,7 +20,7 @@ Simple script to change RC channel 8 from Save Waypoint to Relay 3 control with 
 
 ### armSwitch.lua
 
-Monitors an RC channel for a threshold PWM value and arms/disarms the flight controller accordingly.  Useful when RC channels are limited to "overload" a channel with an additional arm/disarm function.  I used it on a three position switch for the following functions:
+Monitors an RC channel for a threshold PWM value and arms/disarms the flight controller accordingly.  Useful when RC channels are limited - allows "overloading" a channel with an additional arm/disarm function.  I used it on a three position switch for the following functions:
 * Position 1: Engine Kill/Disarm
 * Position 2: Engine Run/Disarm
 * Position 3: Engine Run/Arm
