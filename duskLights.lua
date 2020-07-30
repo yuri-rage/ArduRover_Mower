@@ -12,8 +12,8 @@
 LIGHT_RELAY    = 3    -- relay that controls lights
 ON_STATE       = 0    -- 0 for LOW, 1 for HIGH
 DUSK_ELEVATION = 6    -- (degrees) solar elevation below which to activate the relay (recommend 6-9)
-FREQUENCY      = 60    -- (seconds) how often to check solar elevation (recommend 300, which is 5 minutes)
-VERBOSE_MODE   = 2    -- 0 to suppress all GCS messages, 1 for light status only, 2 for additional solar data messages
+FREQUENCY      = 120  -- (seconds) how often to check solar elevation (recommend 120, which is 2 minutes)
+VERBOSE_MODE   = 1    -- 0 to suppress all GCS messages, 1 for light status only, 2 for additional solar data messages
 -------- END USER EDITABLE GLOBALS --------
 
 -- relay:enabled(relay) does not work as advartised
@@ -25,7 +25,7 @@ CURRENT_STATE  = -1
 
 if (VERBOSE_MODE > 0) then gcs:send_text(0, "duskLights: Script active") end
 
-function setRelay(relayNum, newState)
+function SetRelay(relayNum, newState)
 	
 	if (CURRENT_STATE) == newState then return end
 	
@@ -137,9 +137,9 @@ function update()
 	elevAngle = GetSolarElevAngle(gpsDate)
 	
 	if (elevAngle < DUSK_ELEVATION) then
-		setRelay(LIGHT_RELAY, ON_STATE)
+		SetRelay(LIGHT_RELAY, ON_STATE)
 	else
-		setRelay(LIGHT_RELAY, ON_STATE ~ 1)
+		SetRelay(LIGHT_RELAY, ON_STATE ~ 1)
 	end
 
 	if (VERBOSE_MODE > 1) then
