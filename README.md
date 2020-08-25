@@ -68,7 +68,7 @@ FENCE and OA seem broken - really bad behavior so far with GPS yaw and this tune
 
 ### test.py
 
-Simple script Mission Planner's built-in interpreter - changes RC channel 8 from Save Waypoint to Relay 3 control with a single mouse click.  Not pretty.  Functional.
+Simple script for Mission Planner's built-in interpreter - changes RC channel 8 from Save Waypoint to Relay 3 control with a single mouse click.  Not pretty.  Functional.
 
 ### duskLights.lua
 
