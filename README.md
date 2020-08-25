@@ -2,6 +2,22 @@
 
 A collection of files that may be of use to ArduPilot Rover users.
 
+### armSwitch.lua
+
+Monitors an RC channel for a threshold PWM value and arms/disarms the flight controller accordingly.  Useful when RC channels are limited - allows "overloading" a channel with an additional arm/disarm function.  I used it on a three position switch for the following functions:
+* Position 1: Engine Kill/Disarm
+* Position 2: Engine Run/Disarm
+* Position 3: Engine Run/Arm
+
+### AutoChoke.lua
+
+Monitors transmitter output for ignition and starter signals.  When the ignition is off, the starter signal toggles between cold and warm starts (choke on vs choke off).  When cold start is selected, it presets a servo connected to the choke, and then slowly outfeeds the choke upon starter release.  The cold/warm start toggle functionality requires external wiring to disable starter engagement when the ignition is off (which should be the case, anyway).
+
+
+## I am no longer using the scripts/files below in favor of a custom Python app.
+
+* See [MaximumRoverdrive](https://github.com/yuri-rage/MaximumRoverdrive)
+
 
 ### Waypoint File Tool
 
@@ -16,14 +32,7 @@ A collection of files that may be of use to ArduPilot Rover users.
 
 ### test.py
 
-Simple script to change RC channel 8 from Save Waypoint to Relay 3 control with a single mouse click.  Not pretty.  Functional.
-
-### armSwitch.lua
-
-Monitors an RC channel for a threshold PWM value and arms/disarms the flight controller accordingly.  Useful when RC channels are limited - allows "overloading" a channel with an additional arm/disarm function.  I used it on a three position switch for the following functions:
-* Position 1: Engine Kill/Disarm
-* Position 2: Engine Run/Disarm
-* Position 3: Engine Run/Arm
+Simple script Mission Planner's built-in interpreter - changes RC channel 8 from Save Waypoint to Relay 3 control with a single mouse click.  Not pretty.  Functional.
 
 ### duskLights.lua
 
