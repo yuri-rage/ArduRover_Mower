@@ -2,12 +2,14 @@
 
 A collection of files that may be of use to ArduPilot Rover users.
 
-### armSwitch.lua
+### ArmSwitchParkingBrake.lua
 
 Monitors an RC channel for a threshold PWM value and arms/disarms the flight controller accordingly.  Useful when RC channels are limited - allows "overloading" a channel with an additional arm/disarm function.  I used it on a three position switch for the following functions:
 * Position 1: Engine Kill/Disarm
 * Position 2: Engine Run/Disarm
 * Position 3: Engine Run/Arm
+
+Additionally, monitors the flight mode for changes and sets the parking brake servo accordingly (on when HOLD mode is selected).
 
 ### AutoChoke.lua
 
@@ -69,6 +71,13 @@ FENCE and OA seem broken - really bad behavior so far with GPS yaw and this tune
 ### test.py
 
 Simple script for Mission Planner's built-in interpreter - changes RC channel 8 from Save Waypoint to Relay 3 control with a single mouse click.  Not pretty.  Functional.
+
+### armSwitch.lua
+
+Monitors an RC channel for a threshold PWM value and arms/disarms the flight controller accordingly.  Useful when RC channels are limited - allows "overloading" a channel with an additional arm/disarm function.  I used it on a three position switch for the following functions:
+* Position 1: Engine Kill/Disarm
+* Position 2: Engine Run/Disarm
+* Position 3: Engine Run/Arm
 
 ### duskLights.lua
 
