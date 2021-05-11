@@ -72,6 +72,10 @@ FENCE and OA seem broken - really bad behavior so far with GPS yaw and this tune
 
 Simple script for Mission Planner's built-in interpreter - changes RC channel 8 from Save Waypoint to Relay 3 control with a single mouse click.  Not pretty.  Functional.
 
+### ArmSwitchParkingBrake (4.0.0).lua
+
+This script works with ArduPilot 4.0.0 and early 4.1.0-dev builds.  4.1.0-beta and later have renamed ahrs:prearm_healthy to ahrs:healthy.
+
 ### armSwitch.lua
 
 Monitors an RC channel for a threshold PWM value and arms/disarms the flight controller accordingly.  Useful when RC channels are limited - allows "overloading" a channel with an additional arm/disarm function.  I used it on a three position switch for the following functions:
