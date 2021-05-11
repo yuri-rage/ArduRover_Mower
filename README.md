@@ -62,7 +62,7 @@ FENCE and OA seem broken - really bad behavior so far with GPS yaw and this tune
 ## Deprecated:
 
 * See [MaximumRoverdrive](https://github.com/yuri-rage/MaximumRoverdrive)
-* I kept them here as a reference for those interested, particularly since ArduPilot scripting documentation isn't very complete.
+* I kept these files here as a reference for those interested, particularly since ArduPilot scripting documentation isn't very complete.
 
 ### Waypoint File Tool
 
