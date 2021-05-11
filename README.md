@@ -59,7 +59,7 @@ Using GPS_DRV_OPTIONS 0 is too slow for GPS heading - need to use direct inject 
 
 FENCE and OA seem broken - really bad behavior so far with GPS yaw and this tune
 
-## I am no longer using the scripts/files below in favor of a custom Python app.
+## Deprecated:
 
 * See [MaximumRoverdrive](https://github.com/yuri-rage/MaximumRoverdrive)
 * I kept them here as a reference for those interested, particularly since ArduPilot scripting documentation isn't very complete.
