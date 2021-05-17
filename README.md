@@ -11,6 +11,10 @@ Monitors an RC channel for a threshold PWM value and arms/disarms the flight con
 
 Additionally, monitors the flight mode for changes and sets the parking brake servo accordingly (on when HOLD mode is selected).
 
+### AutoBlades.lua
+
+Controls a relay (lawnmower blade PTO) based on an RC channel's PWM value and autopilot mode.  The RC channel acts as an enable switch, and behavior changes slightly based on the flight controller's arming state and autopilot mode.  The relay is effectively disabled when the flight controller is disarmed or hold mode is selected.  If the RC channel threshold is met when auto mode is selected and the mission is active beyond the first waypoint, the relay turns on, and then off again when the mission is complete.  In any other autopilot mode, the RC channel acts as a simple on/off switch.
+
 ### AutoChoke.lua
 
 Monitors transmitter output for ignition and starter signals.  When the ignition is off, the starter signal toggles between cold and warm starts (choke on vs choke off).  When cold start is selected, it presets a servo connected to the choke, and then slowly outfeeds the choke upon starter release.  The cold/warm start toggle functionality requires external wiring to disable starter engagement when the ignition is off (which should be the case, anyway).
