@@ -4,7 +4,7 @@
 -- Checks for mission running and enables a   --
 -- relay for the duration of the mission.     --
 --                                            --
---------------- Yuri -- Aug 2020 ---------------
+--------------- Yuri -- May 2021 ---------------
 ------------------------------------------------
 
 --------    USER EDITABLE GLOBALS  --------
