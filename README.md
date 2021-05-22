@@ -23,6 +23,10 @@ Monitors transmitter output for ignition and starter signals.  When the ignition
 
 Macro enabled Excel workbook that converts between waypoint and polygon files.  Also capable of generating reverse direction perimeter passes for mowing.
 
+### waypoint_file_tool.py
+
+Script that builds upon the Excel tool to convert between waypoint and polygon files.  Provides reversed perimeter passes for spiral patterns just like the Excel tool.  Can be run within the Misison Planner interface.
+
 ### .param files
 
 * ArduPilot parameter dumps that may be of interest
@@ -30,42 +34,35 @@ Macro enabled Excel workbook that converts between waypoint and polygon files.  
 
 ## Notes
 
-Next to-do:
-https://github.com/ArduPilot/ardupilot/issues/8788
-
-Per that link, mess with ATC_STR_ACC_MAX (default 180), but be careful not to set too low.
-
 Good reading:
+https://github.com/ArduPilot/ardupilot/issues/8788
 https://discuss.ardupilot.org/t/skid-steer-mower-overshooting-pivot-turns/28910/104
 
-Normal steering and throttle nicely tuned - PID follows well
+Mower is well tuned now
 
-Pivot turn tuning is close - occasionally under/overshoots slightly and pauses to correct before continuing on path - suspect ATC_STR_ANG_P needs attention
+ATC_ACCEL_MAX 0.6-0.8 seems to help smooth starts and possibly helps pivot turns
 
-ATC_ACCEL_MAX 0.6-0.7 seems to help smooth starts and possibly helps pivot turns
+ATC_DECEL_MAX 1.7-5.0 plus ATC_BRAKE 1 is the best discovery yet! Enables significant decel approaching sharp turns and limits overshoots
 
-ATC_DECEL_MAX 1.6 plus ATC_BRAKE 1 is the best discovery yet! Enables significant decel approaching sharp turns and limits overshoots
-
-ATC_STR_RATE_FF 0.3-0.4, ATC_STR_RATE_MAX and WP_PIVOT_RATE 37
+ATC_STR_RATE_FF 0.3-0.4, ATC_STR_RATE_MAX and WP_PIVOT_RATE 41
 
 ATC_STR_RATE_I 0.9 seems to allow faster update of yaw and fixes some of the s-turn issues
 
 ATC_STR_ANG_P of 1.0 - 1.7 seems appropriate - any more than that overshoots (1.7 set for now)
 
-WP_RADIUS and WP_OVERSHOOT have big effects (0.4 each for now)
+WP_RADIUS and WP_OVERSHOOT have big effects (increased WP_RADIUS to 1.3, decreased WP_OVERSHOOT to 0.1-0.3)
 
 WP_SPEED 0 does not use CRUISE_SPEED - it literally stands still in auto mode
 
-NAVL1 parameters now at defaults (I think) - changing them from defaults results in overshoots or slow updates
+NAVL1_PERIOD 2 - be careful with this one - make sure everything else is tuned well, or things will get out of hand with aggressive overshoot corrections.  Works really well in conjunction with BendyRuler obstacle avoidance once things are well tuned.
 
-Disabling GPS_AUTO_CFG confuses EKF3 (never sees GPS config data) - boots faster but seems to hang waiting for complete initialization
+Disabling GPS_AUTO_CFG confuses EKF3 (never sees GPS config data) - boots faster but constantly gives "Unhealthy GPS Signal" messages
 
-GPS_RATE_MS 100.  Seems to make GPS2 quirky, but any other value makes it worse
-(Unhealthy GPS Signal warnings still exist, but less frequent with this setting - 50 is too fast and results in rapidly cycling GPS2 solutions, most of which are not RTK corrected)
+GPS_RATE_MS 100 and GPS_RATE_MS2 - set to 100 and forget about it
 
-Using GPS_DRV_OPTIONS 0 is too slow for GPS heading - need to use direct inject with crossover TX/RX from one SimpleRTK board to the other
+Using GPS_DRV_OPTIONS 0 is generally too slow for GPS heading - recommend direct RTCCM3 injects with crossover TX/RX from one SimpleRTK board to the other
 
-FENCE and OA seem broken - really bad behavior so far with GPS yaw and this tune
+BendyRuler OA works nicely with fences in 4.1.0-Beta1.  Likely accepts only integer values for circular fences (need to test further).
 
 ## Deprecated:
 
