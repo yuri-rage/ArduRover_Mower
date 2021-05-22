@@ -35,8 +35,8 @@ Script that builds upon the Excel tool to convert between waypoint and polygon f
 ## Notes
 
 Good reading:
-https://github.com/ArduPilot/ardupilot/issues/8788
-https://discuss.ardupilot.org/t/skid-steer-mower-overshooting-pivot-turns/28910/104
+* https://github.com/ArduPilot/ardupilot/issues/8788
+* https://discuss.ardupilot.org/t/skid-steer-mower-overshooting-pivot-turns/28910/104
 
 Mower is well tuned now
 
