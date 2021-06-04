@@ -27,6 +27,10 @@ Macro enabled Excel workbook that converts between waypoint and polygon files.  
 
 Script that builds upon the Excel tool to convert between waypoint and polygon files.  Provides reversed perimeter passes for spiral patterns just like the Excel tool.  Can be run within the Misison Planner interface.
 
+### min_monitor.py
+
+A friendlier MAVLink Inspector for Mission Planner, allowing for compact viewing of selectable MAVLink messages with color coding based on threshold values and scaling to view the data in proper units rather than their raw transmitted values.
+
 ### .param files
 
 * ArduPilot parameter dumps that may be of interest
