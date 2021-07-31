@@ -1,0 +1,9 @@
+# Raspbian OS file location: /lib/udev/rules.d/98-persistent-tty.rules
+# Note: Some of these values are unique to specific devices
+#       Use lsusb to list device attributes
+
+SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6015", ATTRS{serial}=="D306SAWF", SYMLINK+="ttyTelemetry0"
+SUBSYSTEM=="tty", KERNELS=="1-1.2", ATTRS{product}=="u-blox GNSS receiver" SYMLINK+="ttyGPS0"
+SUBSYSTEM=="tty", KERNELS=="1-1.3", ATTRS{product}=="u-blox GNSS receiver" SYMLINK+="ttyGPS1"
+SUBSYSTEM=="tty", KERNELS=="1-1.4", ATTRS{product}=="u-blox GNSS receiver" SYMLINK+="ttyGPS2"
+SUBSYSTEM=="tty", KERNELS=="1-1.5", ATTRS{product}=="u-blox GNSS receiver" SYMLINK+="ttyGPS3"
