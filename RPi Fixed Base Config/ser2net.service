@@ -1,0 +1,12 @@
+# Raspbian OS file location: /lib/systemd/system/ser2net.service
+
+[Unit]
+Description=Relay serial data to UDP Server
+After=syslog.target
+
+[Service]
+ExecStart=/usr/sbin/ser2net -n
+
+[Install]
+WantedBy=multi-user.target
+Alias=ser2net.service
