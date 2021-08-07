@@ -2,7 +2,7 @@
     VERY rudimentary PID simulation using matplotlib and simple-pid
 
     Lots of hard-coded values and global variables - not my finest work, but maybe my fastest
-    
+
     Dependencies:
         matplotlib
         simple-pid
@@ -77,7 +77,7 @@ list_time = []
 list_desired = []
 list_achieved = []
 
-for t in range(32):
+for t in range(MAX_PLOT_POINTS):
     list_time.append((t / 4 - 8))
     list_desired.append(desired)
     list_achieved.append(achieved)
