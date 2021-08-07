@@ -38,7 +38,7 @@ A friendlier MAVLink Inspector for Mission Planner, allowing for compact viewing
 
 ### pid-simulator.py
 
-A very rudimentry PID simulation (visualizer) using matplotlib.  Allows real-time changes to the terms to visualize how the controller responds.  Requires matplotlib and simple-pid (e.g., "pip install matplotlib simple-pid").
+A very rudimentary PID simulation (visualizer) using matplotlib.  Allows real-time changes to the terms to visualize how the controller responds.  Requires matplotlib and simple-pid (e.g., "pip install matplotlib simple-pid").
 
 ## Notes
 
