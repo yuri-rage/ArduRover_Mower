@@ -36,6 +36,10 @@ A friendlier MAVLink Inspector for Mission Planner, allowing for compact viewing
 * ArduPilot parameter dumps that may be of interest
 * Filenames describe the intent
 
+### pid-simulator.py
+
+A very rudimentry PID simulation (visualizer) using matplotlib.  Allows real-time changes to the terms to visualize how the controller responds.  Requires matplotlib and simple-pid (e.g., "pip install matplotlib simple-pid").
+
 ## Notes
 
 Good reading:
