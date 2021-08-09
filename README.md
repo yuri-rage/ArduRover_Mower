@@ -23,6 +23,10 @@ Monitors transmitter output for ignition and starter signals.  When the ignition
 
 Macro enabled Excel workbook that converts between waypoint and polygon files.  Also capable of generating reverse direction perimeter passes for mowing.
 
+### servo_tuner.py
+
+Intended to augment the Servo Output page on Mission Planner's Setup tab.  Shows minimum, maximum, difference, and midpoint for each servo's PWM output.  Allows manual override of RC input to be more precise than using an RC transmitter for tuning position/speed.  **Word of caution** - since the script is capable of overriding RC transmitter commands, please use it with care.  It is capable of producing full speed/travel output at a mis-click of the mouse!
+
 ### waypoint_file_tool.py
 
 Script that builds upon the Excel tool to convert between waypoint and polygon files.  Provides reversed perimeter passes for spiral patterns just like the Excel tool.  Can be run within the Misison Planner interface.
