@@ -23,7 +23,7 @@ local FREQUENCY      = 100   -- (ms) how often to run this script (100 to 250 wo
 local VERBOSE_MODE   = 1     -- 0 to suppress all GCS messages, 1 for status updates, 2 for additional debug messages
 -------- END USER EDITABLE GLOBALS --------
 
-if (VERBOSE_MODE > 0) then gcs:send_text(5, "Welcome to Maximum Roverdrive") end
+if (VERBOSE_MODE > 0) then gcs:send_text(6, "Welcome to Maximum Roverdrive") end
 
 local lastPwm = rc:get_pwm(ARM_CHANNEL)
 local lastMode = vehicle:get_mode()
@@ -41,7 +41,7 @@ function update()
             if (not ahrs:healthy() and VERBOSE_MODE > 0) then
                 gcs:send_text(4, "Armed when not fully aligned!")
             elseif (VERBOSE_MODE > 0) then
-                gcs:send_text(5, "Maximum Roverdrive...let's roll!")
+                gcs:send_text(6, "Maximum Roverdrive...let's roll!")
             end
         elseif (pwm > THRESHOLD and armed) then
             arming:disarm()
@@ -52,10 +52,10 @@ function update()
         lastMode = mode
         if (mode == HOLD_MODE) then
             SRV_Channels:set_output_pwm(BRAKE_SERVO_FN, BRAKE_ON)
-            if (VERBOSE_MODE > 0) then gcs:send_text(5, "Parking brake: ON") end
+            if (VERBOSE_MODE > 0) then gcs:send_text(6, "Parking brake: ON") end
         else
             SRV_Channels:set_output_pwm(BRAKE_SERVO_FN, BRAKE_OFF)
-            if (VERBOSE_MODE > 0) then gcs:send_text(5, "Parking brake: OFF") end
+            if (VERBOSE_MODE > 0) then gcs:send_text(6, "Parking brake: OFF") end
         end
     end
     
