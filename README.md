@@ -15,9 +15,9 @@ Additionally, monitors the flight mode for changes and sets the parking brake se
 
 Controls a relay (lawnmower blade PTO) based on an RC channel's PWM value and autopilot mode.  The RC channel acts as an enable switch, and behavior changes slightly based on the flight controller's arming state and autopilot mode.  The relay is effectively disabled when the flight controller is disarmed or hold mode is selected.  If the RC channel threshold is met when auto mode is selected and the mission is active beyond the first waypoint, the relay turns on, and then off again when the mission is complete.  In any other autopilot mode, the RC channel acts as a simple on/off switch.
 
-### AutoChoke.lua
+### AutoChokeSaveWP.lua
 
-Monitors transmitter output for ignition and starter signals.  When the ignition is off, the starter signal toggles between cold and warm starts (choke on vs choke off).  When cold start is selected, it presets a servo connected to the choke, and then slowly outfeeds the choke upon starter release.  The cold/warm start toggle functionality requires external wiring to disable starter engagement when the ignition is off (which should be the case, anyway).
+Monitors transmitter output for ignition and starter signals.  When the ignition is off, the starter signal toggles between cold and warm starts (choke on vs choke off).  When cold start is selected, it presets a servo connected to the choke, and then slowly outfeeds the choke upon starter release.  If the vehicle is armed, the starter switch becomes a "save waypoint" switch (if your transmitter has only one spring loaded toggle switch, this can be helpful "overloading" of switch functionality).
 
 ### WaypointFileTool with Reverse.xlsm
 
