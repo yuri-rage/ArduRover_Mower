@@ -27,7 +27,7 @@ local GPS_INSTANCE = 0                 -- GPS to monitor (moving base, most like
 local MIN_FIX_TYPE = 6                 -- 3 is is 3d Fix, 4 is DGPS, 5 is RTK Float, 6 is RTK Fixed
 local PAUSE_MODE   = ROVER_MODE_MANUAL -- mode to command when GPS fix is inadequate
 local BAD_FIX_TIMEOUT  = 1600          -- how long a bad fix type must be present before pausing the mission
-local GOOD_FIX_TIMEOUT =  600          -- low long a good fix type must be present before resuming the mission
+local GOOD_FIX_TIMEOUT =  600          -- how long a good fix type must be present before resuming the mission
 local FREQUENCY    = 200               -- (ms) how often to run this script (50-250 should work fine)
 local VERBOSE_MODE = 2                 -- 0 to suppress all GCS messages, 1 for pause status only, 2 for additional GPS/debug messages
 -------- END USER EDITABLE GLOBALS --------
