@@ -19,6 +19,10 @@ Controls a relay (lawnmower blade PTO) based on an RC channel's PWM value and au
 
 Monitors transmitter output for ignition and starter signals.  When the ignition is off, the starter signal toggles between cold and warm starts (choke on vs choke off).  When cold start is selected, it presets a servo connected to the choke, and then slowly outfeeds the choke upon starter release.  If the vehicle is armed, the starter switch becomes a "save waypoint" switch (if your transmitter has only one spring loaded toggle switch, this can be helpful "overloading" of switch functionality).
 
+### MinFixType.lua
+
+Monitors a GPS instance for minimum performance (fix type) during waypoint missions.  If the GPS reports a fix type less than desired, the mission is paused until the fix type is again reported adequate.
+
 ### WaypointFileTool with Reverse.xlsm
 
 Macro enabled Excel workbook that converts between waypoint and polygon files.  Also capable of generating reverse direction perimeter passes for mowing.
