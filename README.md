@@ -27,6 +27,10 @@ Monitors a GPS instance for minimum performance (fix type) during waypoint missi
 
 Macro enabled Excel workbook that converts between waypoint and polygon files.  Also capable of generating reverse direction perimeter passes for mowing.
 
+### MultiMission.lua
+
+If AUTO mode is commanded via the RC transmitter, and no waypoints are loaded, this script loads missions sequentially from the root of the SD card (0.waypoints, 1.waypoints, etc).  It will run those missions consecutively until the last one completes or another flight mode is commanded.
+
 ### servo_tuner.py
 
 Intended to augment the Servo Output page on Mission Planner's Setup tab.  Shows minimum, maximum, difference, and midpoint for each servo's PWM output.  Allows manual override of RC input to be more precise than using an RC transmitter for tuning position/speed.  **Word of caution** - since the script is capable of overriding RC transmitter commands, please use it with care.  It is capable of producing full speed/travel output at a mis-click of the mouse!
