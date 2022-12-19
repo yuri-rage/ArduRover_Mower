@@ -1,0 +1,17 @@
+%YAML 1.1
+---
+
+# Yuri's fixed base ser2net config
+# Raspbian OS file location: /etc/ser2net.yaml
+
+connection: &gps0tcp
+    accepter: tcp,2001
+    connector: serialdev,
+              /dev/ttyGPS0,
+              460800n81,local,nobreak
+
+connection: &telem0tcp
+    accepter: tcp, 2000
+    connector: serialdev,
+               /dev/ttyTelemetry0,
+               57600n81,local,nobreak
